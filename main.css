@@ -719,3 +719,6 @@ html {
     height: 530px;
   }
 }
+.scroll__content {
+  padding: 30px !important;
+}

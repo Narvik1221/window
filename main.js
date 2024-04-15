@@ -1,8 +1,8 @@
 let whatsapp;
 let whatsappContainer = document.querySelector(".whatsapp");
+let doc=document.querySelector('.map-widget-content-view__frame')
 getW = () => {
   whatsapp = document.querySelector(".dg__social-widget");
-  console.log(whatsapp);
   if (whatsapp == null) {
     setTimeout(getW, 10);
   } else {
@@ -11,7 +11,7 @@ getW = () => {
     whatsappContainer.appendChild(popupWhatsapp);
     popupWhatsapp.style.display = "block";
 
-    console.log();
+  
   }
 };
 
@@ -43,9 +43,3 @@ window.addEventListener(
   true
 );
 
-var element = document.getElementById("phone");
-var maskOptions = {
-  mask: "+7(000)000-00-00",
-  lazy: false,
-};
-var mask = new IMask(element, maskOptions);
