@@ -1,6 +1,6 @@
 let whatsapp;
 let whatsappContainer = document.querySelector(".whatsapp");
-let doc=document.querySelector('.map-widget-content-view__frame')
+let doc = document.querySelector(".map-widget-content-view__frame");
 getW = () => {
   whatsapp = document.querySelector(".dg__social-widget");
   if (whatsapp == null) {
@@ -10,8 +10,6 @@ getW = () => {
     let popupWhatsapp = whatsapp.querySelector(".dg__social-widget__popup");
     whatsappContainer.appendChild(popupWhatsapp);
     popupWhatsapp.style.display = "block";
-
-  
   }
 };
 
@@ -43,8 +41,8 @@ window.addEventListener(
   true
 );
 
-document.getElementById('openTelegram').addEventListener('click', function() {
-  const telegramUsername = '@evrookna_germes_bot';  // Замените на необходимый username
+document.getElementById("openTelegram").addEventListener("click", function (event) {
+  const telegramUsername = "@evrookna_germes_bot"; // Замените на необходимый username
   const appLink = `tg://resolve?domain=${telegramUsername}`;
   const webLink = `https://web.telegram.org/a/#7063673396`;
 
@@ -52,16 +50,17 @@ document.getElementById('openTelegram').addEventListener('click', function() {
   const timeout = 2500;
 
   const openApp = () => {
+    setTimeout(() => {
       window.location = appLink;
+    }, 1000);
 
-      setTimeout(() => {
-          if (Date.now() - now < timeout + 100) {
-            window.open(webLink, '_blank');
-  
-          }
-      }, timeout);
+    setTimeout(() => {
+      if (Date.now() - now < timeout + 100) {
+        window.open(webLink, "_blank");
+      }
+    }, timeout);
   };
-
+  event.preventDefault()
   openApp();
 });
 // document.getElementById('openTelegram').addEventListener('click', function() {
@@ -88,8 +87,8 @@ document.getElementById('openTelegram').addEventListener('click', function() {
 //       window.open(webLink, '_blank');
 //   }, 2500);
 // });
-document.getElementById('openWhatsApp').addEventListener('click', function() {
-  const phoneNumber = '+79622842222';  // Замените на необходимый номер
+document.getElementById("openWhatsApp").addEventListener("click", function () {
+  const phoneNumber = "+79622842222"; // Замените на необходимый номер
   const appLink = `whatsapp://send?phone=${phoneNumber}`;
   const webLink = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
   const timeout = 1500;
@@ -99,11 +98,10 @@ document.getElementById('openWhatsApp').addEventListener('click', function() {
   window.location = appLink;
 
   // If WhatsApp is not opened in the given time, redirect to the web version
-  setTimeout(function() {
-      if (Date.now() - start < timeout + 100) {
-        window.open(webLink, '_blank');
-
-      }
+  setTimeout(function () {
+    if (Date.now() - start < timeout + 100) {
+      window.open(webLink, "_blank");
+    }
   }, timeout);
 });
 
