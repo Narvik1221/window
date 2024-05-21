@@ -88,19 +88,36 @@ document.getElementById('openTelegram').addEventListener('click', function() {
 //       window.open(webLink, '_blank');
 //   }, 2500);
 // });
-
-
 document.getElementById('openWhatsApp').addEventListener('click', function() {
-  // Телефонный номер или текст для открытия в WhatsApp
   const phoneNumber = '+79622842222';  // Замените на необходимый номер
   const appLink = `whatsapp://send?phone=${phoneNumber}`;
+  const webLink = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+  const timeout = 1500;
+  const start = Date.now();
 
-  // Создаем невидимый iframe для попытки открыть приложение
-  const iframe = document.createElement('iframe');
-  iframe.style.display = 'none';
-  iframe.src = appLink;
-  document.body.appendChild(iframe);
+  // Try to open WhatsApp
+  window.location = appLink;
 
-  // Устанавливаем таймаут для проверки, открылось ли приложение
+  // If WhatsApp is not opened in the given time, redirect to the web version
+  setTimeout(function() {
+      if (Date.now() - start < timeout + 100) {
+        window.open(webLink, '_blank');
 
+      }
+  }, timeout);
 });
+
+// document.getElementById('openWhatsApp').addEventListener('click', function() {
+//   // Телефонный номер или текст для открытия в WhatsApp
+//   const phoneNumber = '+79622842222';  // Замените на необходимый номер
+//   const appLink = `whatsapp://send?phone=${phoneNumber}`;
+
+//   // Создаем невидимый iframe для попытки открыть приложение
+//   const iframe = document.createElement('iframe');
+//   iframe.style.display = 'none';
+//   iframe.src = appLink;
+//   document.body.appendChild(iframe);
+
+//   // Устанавливаем таймаут для проверки, открылось ли приложение
+
+// });
