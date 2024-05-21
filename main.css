@@ -661,7 +661,6 @@ html {
 
 @media (max-width: 480px) {
   .widget__item {
-
     width: 320px;
   }
   .widget__inner {
@@ -722,4 +721,14 @@ html {
 }
 .scroll__content {
   padding: 30px !important;
+}
+
+.widget__item.whatsapp {
+  position: relative;
+}
+.dg__social-widget__popup__copyright {
+  display: none !important;
+}
+.dg__social-widget__button{
+  pointer-events: none;
 }
