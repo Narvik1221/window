@@ -42,7 +42,7 @@ window.addEventListener(
 );
 
 document.getElementById("openTelegram").addEventListener("click", function (event) {
-  const telegramUsername = "@evrookna_germes_bot"; // Замените на необходимый username
+  const telegramUsername = "evrookna_germes_bot"; // Замените на необходимый username
   const appLink = `tg://resolve?domain=${telegramUsername}`;
   const webLink = `https://web.telegram.org/a/#7063673396`;
 
