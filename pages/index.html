@@ -57,8 +57,12 @@
             </div>
 
             <div class="header__right">
-              <div class="header__phone">8 962 284 22 22</div>
-
+              <button class="header__works-btn mb20">Наши работы</button>
+              <div class="header__works">
+                <div class="header__phone">8 962 284 22 22</div>
+                <button class="header__works-btn">Заказать звонок</button>
+                <a href="./calc.html" class="header__works-btn">Калькулятор</a>
+              </div>
             </div>
             <button class="header__button"></button>
           </div>
@@ -125,25 +129,61 @@
         <div class="container-my">
           <div class="widget__inner">
             <div class="widget__title">О нас</div>
-            <div class="widget__text">
-              Установка окон ПВХ, остекление балконов и лоджий, отделка квартир
-              под ключ, а также фасадные и кровельные работы.
+            <div class="about">
+              <div class="about__inner">
+                <div class="about__left">
+                  <div size="3" class="about__title">Остались вопросы?</div>
+                  <div class="about__text">
+                    Получите бесплатную консультацию
+                  </div>
+                  <p size="16" class="about__text">
+                    Позвоните в&nbsp;Контакт-центр или&nbsp;оставьте заявку
+                    на&nbsp;обратный звонок
+                  </p>
+                  <a href="tel:88003022005" class="about__phone"
+                    ><span size="3">8 (800) 302-20-05</span></a
+                  >
+                  <p size="14" class="about__text">Круглосуточно, бесплатно</p>
+                </div>
+                <div class="about__right">
+                  <form action="#" class="about__form">
+                    <input
+                    placeholder="Ваш город"
+                    type="text"
+                    name="about__form-input"
+                    class="about__form-input"
+                  />
+                    <input
+                      placeholder="Ваше имя"
+                      type="text"
+                      name="about__form-input"
+                      class="about__form-input"
+                    />
+
+                    <input
+                      placeholder="Телефон"
+                      type="tel"
+                      class="about__form-input"
+                      value=""
+                    />
+
+                    <button class="header__works-btn about-btn">
+                      Получить консультацию
+                    </button>
+                  </form>
+                </div>
+              </div>
             </div>
             <div class="widget__content">
               <div class="widget__item tg">
                 <div class="tg__title">Мы в Телеграм</div>
 
-                <button
-                  id="openTelegram"
-                  class="tg__link"
-                >
+                <button id="openTelegram" class="tg__link">
                   <img src="../images/tg.svg" alt="tg" class="tg__img" />
                   присоединиться
-              </button>
+                </button>
               </div>
-              <div id="openWhatsApp" class="widget__item whatsapp">
-          
-              </div>
+              <div id="openWhatsApp" class="widget__item whatsapp"></div>
             </div>
           </div>
         </div>
