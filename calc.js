@@ -12,9 +12,7 @@ const orders = [
   },
 ];
 
-let changeWindow=()=>{
-
-};
+let changeWindow = () => {};
 let closeSection;
 let countWindow = 1;
 let doc = document.querySelector(".calc__inner");
@@ -39,15 +37,13 @@ const newWindow = () => {
   start();
 };
 const start = () => {
-
-order = orders[+doc.id.substring(1) - 1];
+  order = orders[+doc.id.substring(1) - 1];
   let start = doc.querySelector("#one");
   console.log(start);
-  try{
+  try {
     start.click();
-  }
-  catch(e){
-    console.log(e)
+  } catch (e) {
+    console.log(e);
   }
 
   let Allinner = document.querySelectorAll(".calc__inner");
@@ -114,64 +110,62 @@ order = orders[+doc.id.substring(1) - 1];
     calcImg.src = `/calc_imgages/${event.target.id}.png`;
   };
 
-  document.addEventListener("DOMContentLoaded", () => {
-    let calcImg = doc.querySelector(".calc__img");
-    const selects = doc.querySelectorAll(".calc-select");
-    console.log(selects);
-    // Добавляем обработчик события change к каждому элементу <select>
-    selects.forEach((select) => {
-      if (select.id == "color" || select.id == "windowType")
-        order[select.id] = select.value;
-    });
-    selects.forEach((select) => {
-      select.addEventListener("change", (event) => {
-        console.log(event.target.name);
-        if (
-          event.target.name == "d" ||
-          event.target.name == "d2" ||
-          event.target.name == "d3"
-        ) {
-          calcImg.src = "/calc_imgages/" + event.target.name + ".png";
+  let calcImg = doc.querySelector(".calc__img");
+  const selects = doc.querySelectorAll(".calc-select");
+  console.log(selects);
+  // Добавляем обработчик события change к каждому элементу <select>
+  selects.forEach((select) => {
+    if (select.id == "color" || select.id == "windowType")
+      order[select.id] = select.value;
+  });
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      console.log(event.target.name);
+      if (
+        event.target.name == "d" ||
+        event.target.name == "d2" ||
+        event.target.name == "d3"
+      ) {
+        calcImg.src = "/calc_imgages/" + event.target.name + ".png";
 
-          if (event.target.name == "d3" && event.target.value == "Нет") {
-            calcImg.src = "/calc_imgages/d2.png";
-          }
-          if (event.target.name == "d2" && event.target.value == "Нет") {
-            calcImg.src = "/calc_imgages/d.png";
-          }
+        if (event.target.name == "d3" && event.target.value == "Нет") {
+          calcImg.src = "/calc_imgages/d2.png";
         }
-
-        console.log;
-        const elementName = event.target.value;
-        console.log(elementName);
-
-        order[event.target.id] = event.target.value;
-      });
-    });
-
-    const inputs = doc.querySelectorAll(".calc-input");
-    console.log(inputs);
-    // Добавляем обработчик события change к каждому элементу <select>
-    inputs.forEach((input) => {
-      input.addEventListener("input", (event) => {
-        if (event.target.name == "width") {
-          order.width = event.target.value;
-          smallWidth.textContent = order.width;
-          bottomNum.textContent = order.width;
-        } else if (event.target.name == "height") {
-          order.height = event.target.value;
-          smallHeight.textContent = order.height;
-          console.log(smallHeight);
-
-          rightNum.textContent = order.height;
+        if (event.target.name == "d2" && event.target.value == "Нет") {
+          calcImg.src = "/calc_imgages/d.png";
         }
-        // if (event.target.value > event.target.max) {
-        //   event.target.value = event.target.max;
-        // }
-        // if (event.target.value < event.target.min) {
-        //   event.target.value = event.target.min;
-        // }
-      });
+      }
+
+      console.log;
+      const elementName = event.target.value;
+      console.log(elementName);
+
+      order[event.target.id] = event.target.value;
+    });
+  });
+
+  const inputs = doc.querySelectorAll(".calc-input");
+  console.log(inputs);
+  // Добавляем обработчик события change к каждому элементу <select>
+  inputs.forEach((input) => {
+    input.addEventListener("input", (event) => {
+      if (event.target.name == "width") {
+        order.width = event.target.value;
+        smallWidth.textContent = order.width;
+        bottomNum.textContent = order.width;
+      } else if (event.target.name == "height") {
+        order.height = event.target.value;
+        smallHeight.textContent = order.height;
+        console.log(smallHeight);
+
+        rightNum.textContent = order.height;
+      }
+      // if (event.target.value > event.target.max) {
+      //   event.target.value = event.target.max;
+      // }
+      // if (event.target.value < event.target.min) {
+      //   event.target.value = event.target.min;
+      // }
     });
   });
 
@@ -191,7 +185,7 @@ order = orders[+doc.id.substring(1) - 1];
     event.preventDefault();
     let stvorki = 0;
     let windowType = 1;
-    console.log(order)
+    console.log(order);
     if (order.one !== "" && order.one !== "Нет") {
       stvorki += 1;
     }
@@ -214,15 +208,16 @@ order = orders[+doc.id.substring(1) - 1];
     console.log(stCoef);
     let stCount =
       Math.round(9000 * stCoef * windowType) + Math.round(3000 * sizeCoef);
-    alert("Примерная стоимость: "+stCount+" рублей");
+    alert("Примерная стоимость: " + stCount + " рублей");
     console.log(order);
   });
-  try{
+  try {
     start.click();
-  }
-  catch(e){
-    console.log(e)
+  } catch (e) {
+    console.log(e);
   }
 };
-start();
 
+document.addEventListener("DOMContentLoaded", () => {
+  start();
+});
