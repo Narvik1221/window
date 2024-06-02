@@ -12,7 +12,9 @@ const orders = [
   },
 ];
 
-let changeWindow;
+let changeWindow=()=>{
+  
+};
 let closeSection;
 let countWindow = 1;
 let doc = document.querySelector(".calc__inner");
