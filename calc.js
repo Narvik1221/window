@@ -12,7 +12,6 @@ const orders = [
   },
 ];
 
-let changeWindow = (event) => {};
 let countWindow = 1;
 let doc = document.querySelector(".calc__inner");
 let order = orders[+doc.id.substring(1) - 1];
@@ -39,7 +38,7 @@ let newWindowEl=document.querySelector('.new-window')
 newWindowEl.addEventListener('click',newWindow)
 const start = () => {
   order = orders[+doc.id.substring(1) - 1];
-  let start = doc.querySelector("#one");
+  let start = doc.querySelector(".start-btn");
   console.log(start);
 
 
@@ -63,7 +62,7 @@ const start = () => {
   smallHeight.textContent = order.height;
   bottomNum.textContent = order.width;
   rightNum.textContent = order.height;
-  changeWindow = (event) => {
+  const changeWindow = (event) => {
     smallImages = doc.querySelector(".small-images");
     bottomNum = doc.querySelector(".bottom-number");
     rightNum = doc.querySelector(".right-number");
@@ -88,7 +87,7 @@ const start = () => {
     order.type = customTitle;
     smallTitle.textContent = `№ ${Allinner.length} ${customTitle} `;
     let selecList = doc.querySelector(".st__list");
-    let calcImg = doc.querySelector(".calc__img");
+    let calcImg = doc.querySelector(".big-images");
     Array.from(selecList.children).forEach((s) => s.classList.remove("active"));
     console.log(event.target.name);
     let selects = selecList.querySelectorAll("." + event.target.name);
@@ -104,6 +103,14 @@ const start = () => {
       order[s.lastElementChild.id] = s.lastElementChild.value;
     });
     console.log(calcImg);
+    Array.from( calcImg.children).forEach(i=>{
+      if(event.target.id==i.id){
+        i.classList.add('active')
+      }else{
+        i.classList.remove('active')
+      }
+
+    })
     calcImg.src = `/calc_imgages/${event.target.id}.png`;
   };
   let changeWindowEl=doc.querySelectorAll('.calc__item')
@@ -111,6 +118,7 @@ const start = () => {
     i.addEventListener('click',changeWindow)
   })
   try {
+    console.log(start)
     start.click();
   } catch (e) {
     console.log(e);

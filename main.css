@@ -948,6 +948,9 @@ html {
 .st {
   display: none;
 }
+.big-images > *{
+  display: none;
+}
 .active {
   display: block !important;
 }
