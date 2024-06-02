@@ -40,11 +40,7 @@ const start = () => {
   order = orders[+doc.id.substring(1) - 1];
   let start = doc.querySelector("#one");
   console.log(start);
-  try {
-    start.click();
-  } catch (e) {
-    console.log(e);
-  }
+
 
   let Allinner = document.querySelectorAll(".calc__inner");
   console.log(Allinner.length);
@@ -109,7 +105,11 @@ const start = () => {
     console.log(calcImg);
     calcImg.src = `/calc_imgages/${event.target.id}.png`;
   };
-
+  try {
+    start.click();
+  } catch (e) {
+    console.log(e);
+  }
   let calcImg = doc.querySelector(".calc__img");
   const selects = doc.querySelectorAll(".calc-select");
   console.log(selects);
