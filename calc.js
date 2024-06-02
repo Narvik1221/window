@@ -13,11 +13,10 @@ const orders = [
 ];
 
 let changeWindow = (event) => {};
-let closeSection;
 let countWindow = 1;
 let doc = document.querySelector(".calc__inner");
 let order = orders[+doc.id.substring(1) - 1];
-
+let closeSection
 const newWindow = () => {
   countWindow = countWindow + 1;
   let windows = document.querySelector(".windows");
@@ -36,6 +35,8 @@ const newWindow = () => {
   });
   start();
 };
+let newWindowEl=document.querySelector('.new-window')
+newWindowEl.addEventListener('click',newWindow)
 const start = () => {
   order = orders[+doc.id.substring(1) - 1];
   let start = doc.querySelector("#one");
@@ -105,6 +106,10 @@ const start = () => {
     console.log(calcImg);
     calcImg.src = `/calc_imgages/${event.target.id}.png`;
   };
+  let changeWindowEl=doc.querySelectorAll('.calc__item')
+  changeWindowEl.forEach(i=>{
+    i.addEventListener('click',changeWindow)
+  })
   try {
     start.click();
   } catch (e) {
@@ -179,7 +184,8 @@ const start = () => {
     });
     calcBottom.classList.toggle("ac");
   };
-
+  let closeSectionEl=doc.querySelector('#closeSection');
+  closeSectionEl.addEventListener('click',closeSection)
   const form = doc.querySelector("#myForm");
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -219,5 +225,6 @@ const start = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+
   start();
 });

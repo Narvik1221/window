@@ -62,7 +62,7 @@
           <div class="container-my calc-container">
             <div class="windows">
               <div   id="w1" class="calc__inner">
-                <div onclick="closeSection(event)" class="calc__mini">
+                <div id="closeSection" class="calc__mini">
                   <div class="calc-row">
                     <button class="small-btn">
                       <svg
@@ -1161,7 +1161,7 @@
                         <div class="calc__content">
                           <button
                             type="button"
-                            onclick="changeWindow(event)"
+                       
                             data-title="Одностворчатое окно"
                             id="one"
                             name="one"
@@ -1185,7 +1185,7 @@
                           <button
                             type="button"
                             data-title="Двухстворчатое окно"
-                            onclick="changeWindow(event)"
+                  
                             id="two"
                             name="two"
                             class="calc__item"
@@ -1208,7 +1208,7 @@
                           <button
                             type="button"
                             data-title="Трехстворчатое окно"
-                            onclick="changeWindow(event)"
+                          
                             id="three"
                             name="three"
                             class="calc__item"
@@ -1233,7 +1233,7 @@
                             data-title="Трехстворчатое окно с фрамугой"
                             id="four"
                             name="four"
-                            onclick="changeWindow(event)"
+                            
                             class="calc__item"
                           >
                             <svg
@@ -1255,7 +1255,7 @@
                             type="button"
                             data-title="Арочное окно"
                             id="arc"
-                            onclick="changeWindow(event)"
+                        
                             name="three"
                             class="calc__item"
                           >
@@ -1278,7 +1278,7 @@
                             type="button"
                             data-title="Балконный блок"
                             id="d"
-                            onclick="changeWindow(event)"
+                          
                             name="door"
                             class="calc__item"
                           >
@@ -1475,7 +1475,7 @@
             </div>
 
             <div class="calc-send">
-              <button onclick="newWindow()" class="new-window">
+              <button  class="new-window">
                 Добавить окно
               </button>
             </div>
