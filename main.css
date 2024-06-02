@@ -1046,7 +1046,7 @@ html {
 .small-subtitle{
   display: flex;
   color: #84858A;
-  font-size: 600;
+  font-weight: 600;
 }
 .bottom:before {
   content: '';
