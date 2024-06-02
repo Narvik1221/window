@@ -22,7 +22,13 @@ const start = () => {
 order = orders[+doc.id.substring(1) - 1];
   let start = doc.querySelector("#one");
   console.log(start);
-  start.click();
+  try{
+    start.click();
+  }
+  catch(e){
+    console.log(e)
+  }
+
   let Allinner = document.querySelectorAll(".calc__inner");
   console.log(Allinner.length);
   let handleInner = (event) => {
