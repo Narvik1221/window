@@ -41,28 +41,31 @@ window.addEventListener(
   true
 );
 
-document.getElementById("openTelegram").addEventListener("click", function (event) {
-  const telegramUsername = "evrookna_germes_bot"; // Замените на необходимый username
-  const appLink = `tg://resolve?domain=${telegramUsername}`;
-  const webLink = `https://web.telegram.org/a/#7063673396`;
+document.querySelectorAll("#openTelegram").forEach((i) =>
+  i.addEventListener("click", function (event) {
+    const telegramUsername = "evrookna_germes_bot"; // Замените на необходимый username
+    const appLink = `tg://resolve?domain=${telegramUsername}`;
+    const webLink = `https://web.telegram.org/a/#7063673396`;
 
-  const now = Date.now();
-  const timeout = 2500;
+    const now = Date.now();
+    const timeout = 2500;
 
-  const openApp = () => {
-    setTimeout(() => {
-      window.location = appLink;
-    }, 1000);
+    const openApp = () => {
+      setTimeout(() => {
+        window.location = appLink;
+      }, 1000);
 
-    setTimeout(() => {
-      if (Date.now() - now < timeout + 100) {
-        window.open(webLink, "_blank");
-      }
-    }, timeout);
-  };
-  event.preventDefault()
-  openApp();
-});
+      setTimeout(() => {
+        if (Date.now() - now < timeout + 100) {
+          window.open(webLink, "_blank");
+        }
+      }, timeout);
+    };
+    event.preventDefault();
+    openApp();
+  })
+);
+
 // document.getElementById('openTelegram').addEventListener('click', function() {
 //   // Telegram username or bot
 //   const telegramUsername = '@evrookna_germes_bot';
