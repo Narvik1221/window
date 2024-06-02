@@ -13,7 +13,7 @@ const orders = [
 ];
 
 let changeWindow=()=>{
-  
+
 };
 let closeSection;
 let countWindow = 1;
@@ -217,7 +217,12 @@ order = orders[+doc.id.substring(1) - 1];
     alert("Примерная стоимость: "+stCount+" рублей");
     console.log(order);
   });
-  start.click();
+  try{
+    start.click();
+  }
+  catch(e){
+    console.log(e)
+  }
 };
 start();
 
