@@ -17,6 +17,25 @@ let closeSection;
 let countWindow = 1;
 let doc = document.querySelector(".calc__inner");
 let order = orders[+doc.id.substring(1) - 1];
+
+const newWindow = () => {
+  countWindow = countWindow + 1;
+  let windows = document.querySelector(".windows");
+  let inner = document.querySelector(".calc__inner");
+  if (inner) {
+    const clone = inner.cloneNode(true);
+    clone.id = "w" + countWindow;
+    doc = clone;
+    windows.appendChild(clone);
+    orders.push(JSON.parse(JSON.stringify(order)));
+  }
+  console.log(orders);
+  let allClose = document.querySelectorAll(".calc__bottom");
+  allClose.forEach((i) => {
+    i.classList.remove("ac");
+  });
+  start();
+};
 const start = () => {
 
 order = orders[+doc.id.substring(1) - 1];
@@ -199,21 +218,4 @@ order = orders[+doc.id.substring(1) - 1];
   start.click();
 };
 start();
-const newWindow = () => {
-  countWindow = countWindow + 1;
-  let windows = document.querySelector(".windows");
-  let inner = document.querySelector(".calc__inner");
-  if (inner) {
-    const clone = inner.cloneNode(true);
-    clone.id = "w" + countWindow;
-    doc = clone;
-    windows.appendChild(clone);
-    orders.push(JSON.parse(JSON.stringify(order)));
-  }
-  console.log(orders);
-  let allClose = document.querySelectorAll(".calc__bottom");
-  allClose.forEach((i) => {
-    i.classList.remove("ac");
-  });
-  start();
-};
+
